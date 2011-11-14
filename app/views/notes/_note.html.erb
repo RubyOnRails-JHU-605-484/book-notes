@@ -1,0 +1,10 @@
+<div class="note">
+  <div style="font:bold 15px arial,sans-serif; padding-bottom: 0px; padding-left: 10px;">
+    <%= time_ago_in_words(note.created_at)%> ago:
+  </div>
+  <div style="padding-left: 10px; padding-bottom: 15px;">
+    <%= simple_format(note.note) %>
+    <%= link_to "Delete", [@book, note],
+                confirm: "Are you sure?", :method => :delete %>
+  </div>
+</div>

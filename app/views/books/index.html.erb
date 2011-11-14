@@ -1,0 +1,15 @@
+<h1>Books</h1>
+
+<% @books.each do |book| %>
+    <div style="padding-top: 15px;">
+      <%= link_to "#{book.name} (#{book.author})", book,
+                  style: "font:bold 15px arial,sans-serif;"  %>
+      <%= link_to 'Edit', edit_book_path(book) %>
+      <%= link_to 'Destroy', book, :confirm => 'Are you sure?',
+                  :method => :delete %>
+    </div>
+<% end %>
+
+<br/>
+
+<%= link_to 'New Book', new_book_path %>
